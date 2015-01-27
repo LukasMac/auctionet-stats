@@ -1,7 +1,7 @@
 module Auctionet
   class Items
     def initialize(items)
-      @items = items.map { |item| Auctionet::Item.new(item) }
+      @items = items.map { |item| Item.new(item) }
     end
 
     def get_item_with_recent_bid
