@@ -6,8 +6,8 @@ describe Auctionet::Item do
     Auctionet::Item.new({
       "id" => 1,
       "bids" => [
-        { "timestamp" => 123 },
-        { "timestamp" => 124 },
+        { "timestamp" => 200 },
+        { "timestamp" => 300 },
       ]
     })
   end
@@ -15,6 +15,12 @@ describe Auctionet::Item do
   describe '#id' do
     it 'should return correct item id' do
       expect(item.id).to eq 1
+    end
+  end
+
+  describe '#recent_bid_timestamp' do
+    it 'should return most recent bid timestamp' do
+      expect(item.recent_bid_timestamp).to eq 300
     end
   end
 end

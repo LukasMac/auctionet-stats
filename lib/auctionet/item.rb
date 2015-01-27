@@ -5,7 +5,8 @@ module Auctionet
     end
 
     def recent_bid_timestamp
-
+      recent_bid = @item["bids"].max_by { |bid| bid["timestamp"] }
+      recent_bid["timestamp"]
     end
 
     def id
