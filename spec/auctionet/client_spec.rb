@@ -11,5 +11,11 @@ describe Auctionet::Client do
       parsed_response = [ { "id" => 1, "bids" => [ "timestamp" => 200 ] } ]
       expect(Auctionet::Client.items).to eq parsed_response
     end
+
+    it 'should return empty hash if API request failed' do
+      allow(Auctionet::Client).to receive(:open).and_raise("error")
+
+      expect(Auctionet::Client.items).to eq({})
+    end
   end
 end

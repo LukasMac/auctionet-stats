@@ -3,9 +3,13 @@ require 'json'
 module Auctionet
   class Client
     def self.items
-      data = open("https://auctionet.com/api/v2/items.json").read
-      json_data = JSON.parse data
-      json_data['items']
+      begin
+        data = open("https://auctionet.com/api/v2/items.json").read
+        json_data = JSON.parse data
+        json_data['items']
+      rescue => e
+        {}
+      end
     end
   end
 end
