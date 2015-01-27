@@ -1,6 +1,7 @@
 module Auctionet
   class Item
     def initialize(item)
+      @item = item
     end
 
     def recent_bid_timestamp
@@ -8,7 +9,7 @@ module Auctionet
     end
 
     def id
-      2
+      @item["id"]
     end
   end
 end
