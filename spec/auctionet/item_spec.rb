@@ -7,8 +7,8 @@ describe Auctionet::Item do
       "id" => 1,
       "currency" => "SEK",
       "bids" => [
-        { "timestamp" => 200 },
-        { "timestamp" => 300 },
+        { "amount" => 50, "timestamp" => 200 },
+        { "amount" => 100, "timestamp" => 300 },
       ]
     }
   end
@@ -18,9 +18,8 @@ describe Auctionet::Item do
       "bids" => [ ],
     }
   end
-  let(:item) do
-    Auctionet::Item.new(item_hash)
-  end
+  let(:item) { Auctionet::Item.new(item_hash) }
+  let(:item_with_no_bids) { Auctionet::Item.new(item_with_no_bids_hash) }
 
   describe "#id" do
     it "should return correct item id" do
@@ -34,7 +33,6 @@ describe Auctionet::Item do
     end
 
     it "should return 0 if item has no bids" do
-      item_with_no_bids = Auctionet::Item.new(item_with_no_bids_hash)
       expect(item_with_no_bids.recent_bid_timestamp).to eq 0
     end
   end
@@ -42,8 +40,8 @@ describe Auctionet::Item do
   describe "#bids" do
     it "should return items bids" do
       expect(item.bids).to eq( [
-        { "timestamp" => 200 },
-        { "timestamp" => 300 },
+        { "amount" => 50, "timestamp" => 200 },
+        { "amount" => 100, "timestamp" => 300 },
       ] )
     end
   end
@@ -51,6 +49,16 @@ describe Auctionet::Item do
   describe "#currency" do
     it "should return item currency" do
       expect(item.currency).to eq "SEK"
+    end
+  end
+
+  describe "#recent_bid_amount" do
+    it "should return recent bid amount" do
+      expect(item.recent_bid_amount).to eq 100
+    end
+
+    it "should return 0 if item has no bids" do
+      expect(item_with_no_bids.recent_bid_amount).to eq 0
     end
   end
 end

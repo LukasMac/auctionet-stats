@@ -7,7 +7,6 @@ module Auctionet
     def recent_bid_timestamp
       return 0 if @item["bids"].empty?
 
-      recent_bid = @item["bids"].max_by { |bid| bid["timestamp"] }
       recent_bid["timestamp"]
     end
 
@@ -21,6 +20,18 @@ module Auctionet
 
     def currency
       @item["currency"]
+    end
+
+    def recent_bid_amount
+      return 0 if @item["bids"].empty?
+
+      recent_bid["amount"]
+    end
+
+    private
+
+    def recent_bid
+      @item["bids"].max_by { |bid| bid["timestamp"] }
     end
   end
 end
