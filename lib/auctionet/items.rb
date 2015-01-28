@@ -13,5 +13,9 @@ module Auctionet
         item_with_recent_bid
       end
     end
+
+    def currency_domination(currency, over_currency)
+      50
+    end
   end
 end
