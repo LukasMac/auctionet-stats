@@ -6,9 +6,9 @@ require 'auctionet-stats/version'
 Gem::Specification.new do |spec|
   spec.name          = "auctionet-stats"
   spec.version       = Auctionet::Stats::VERSION
-  spec.authors       = ["TODO: Write your name"]
+  spec.authors       = ["Lukas Maciulis"]
   spec.email         = ["lukas.maciulis@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
+  spec.summary       = %q{ Auctionet items stats calculated using their API }
   spec.description   = %q{TODO: Write a longer description. Optional.}
   spec.homepage      = ""
   spec.license       = "MIT"
