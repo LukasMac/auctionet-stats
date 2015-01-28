@@ -20,5 +20,9 @@ module Auctionet
 
       100 * currency_items_count / (currency_items_count + over_currency_items_count).to_f
     end
+
+    def take(number)
+      @items.take(number)
+    end
   end
 end

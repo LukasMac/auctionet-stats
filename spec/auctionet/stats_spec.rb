@@ -32,4 +32,10 @@ describe Auctionet::Stats do
       expect(sek_over_eur_domination).to eq 50
     end
   end
+
+  describe "#take_items" do
+    it "should take two items" do
+      expect(take_items(2).size).to eq 2
+    end
+  end
 end
