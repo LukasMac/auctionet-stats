@@ -1,7 +1,4 @@
 require 'spec_helper'
-require 'auctionet/stats'
-require 'auctionet/item'
-require 'auctionet/client'
 
 include Auctionet::Stats
 

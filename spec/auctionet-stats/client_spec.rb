@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'auctionet/client'
 
 describe Auctionet::Client do
   describe ".items" do

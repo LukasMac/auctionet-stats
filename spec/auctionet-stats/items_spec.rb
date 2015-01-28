@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'auctionet/items'
 
 describe Auctionet::Items do
   let(:item_hash) do

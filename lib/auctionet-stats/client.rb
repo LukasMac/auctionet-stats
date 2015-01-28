@@ -4,7 +4,7 @@ module Auctionet
   class Client
     def self.items
       begin
-        data = open("https://auctionet.com/api/v2/items.json").read
+        data = open(ENV['AUCTIONET_ITEMS_URL']).read
         json_data = JSON.parse data
         json_data['items']
       rescue => e

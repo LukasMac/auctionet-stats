@@ -1,6 +1,3 @@
-require "auctionet/items"
-require "auctionet/stats/version"
-
 module Auctionet
   module Stats
     def item_with_recent_bid
