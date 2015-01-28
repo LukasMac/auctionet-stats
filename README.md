@@ -1,6 +1,6 @@
 # Auctionet::Stats
 
-TODO: Write a gem description
+Get stats of Auctionet items. This gem uses Auctionet API to calculate stats.
 
 ## Installation
 
@@ -16,14 +16,7 @@ Or install it yourself as:
 
     $ gem install auctionet-stats
 
-## Usage
+Required: Set ```AUCTIONET_ITEMS_URL``` environment variable to Auctionet API items endpoint.
 
-TODO: Write usage instructions here
+    $ export AUCTIONET_ITEMS_URL=http://....
 
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/auctionet-stats/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
