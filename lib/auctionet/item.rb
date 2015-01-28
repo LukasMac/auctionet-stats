@@ -14,6 +14,10 @@ module Auctionet
       @item["id"]
     end
 
+    def title
+      @item["title"]
+    end
+
     def bids
       @item["bids"]
     end

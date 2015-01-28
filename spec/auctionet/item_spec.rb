@@ -5,6 +5,7 @@ describe Auctionet::Item do
   let(:item_hash) do
     {
       "id" => 1,
+      "title" => "item title",
       "currency" => "SEK",
       "bids" => [
         { "amount" => 50, "timestamp" => 200 },
@@ -59,6 +60,12 @@ describe Auctionet::Item do
 
     it "should return 0 if item has no bids" do
       expect(item_with_no_bids.recent_bid_amount).to eq 0
+    end
+  end
+
+  describe "#title" do
+    it "should return item title" do
+      expect(item.title).to eq "item title"
     end
   end
 end
