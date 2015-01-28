@@ -14,5 +14,9 @@ module Auctionet
     def id
       @item["id"]
     end
+
+    def bids
+      @item["bids"]
+    end
   end
 end

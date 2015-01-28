@@ -37,4 +37,13 @@ describe Auctionet::Item do
       expect(item_with_no_bids.recent_bid_timestamp).to eq 0
     end
   end
+
+  describe "#bids" do
+    it "should return items bids" do
+      expect(item.bids).to eq( [
+        { "timestamp" => 200 },
+        { "timestamp" => 300 },
+      ] )
+    end
+  end
 end

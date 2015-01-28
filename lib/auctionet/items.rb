@@ -5,7 +5,13 @@ module Auctionet
     end
 
     def get_item_with_recent_bid
-      @items.max_by { |item| item.recent_bid_timestamp }
+      item_with_recent_bid = @items.max_by { |item| item.recent_bid_timestamp }
+
+      if item_with_recent_bid.bids.empty?
+        nil
+      else
+        item_with_recent_bid
+      end
     end
   end
 end
