@@ -18,5 +18,9 @@ module Auctionet
     def bids
       @item["bids"]
     end
+
+    def currency
+      @item["currency"]
+    end
   end
 end

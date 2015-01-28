@@ -15,7 +15,10 @@ module Auctionet
     end
 
     def currency_domination(currency, over_currency)
-      50
+      currency_items_count = @items.count { |item| item.currency == currency }
+      over_currency_items_count = @items.count { |item| item.currency == over_currency }
+
+      100 * currency_items_count / (currency_items_count + over_currency_items_count).to_f
     end
   end
 end

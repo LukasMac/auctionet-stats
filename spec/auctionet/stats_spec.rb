@@ -17,12 +17,12 @@ describe Auctionet::Stats do
     allow(Auctionet::Client).to receive(:items) { items }
   end
 
-  describe '#item_with_recent_bid' do
-    it 'should return Item class instance' do
+  describe "#item_with_recent_bid" do
+    it "should return Item class instance" do
       expect(item_with_recent_bid).to be_instance_of(Auctionet::Item)
     end
 
-    it 'should return the correct item' do
+    it "should return the correct item" do
       expect(item_with_recent_bid.id).to eq 2
     end
   end

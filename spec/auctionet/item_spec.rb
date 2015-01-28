@@ -5,6 +5,7 @@ describe Auctionet::Item do
   let(:item_hash) do
     {
       "id" => 1,
+      "currency" => "SEK",
       "bids" => [
         { "timestamp" => 200 },
         { "timestamp" => 300 },
@@ -44,6 +45,12 @@ describe Auctionet::Item do
         { "timestamp" => 200 },
         { "timestamp" => 300 },
       ] )
+    end
+  end
+
+  describe "#currency" do
+    it "should return item currency" do
+      expect(item.currency).to eq "SEK"
     end
   end
 end
